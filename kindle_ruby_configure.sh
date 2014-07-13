@@ -7,13 +7,13 @@
 
 TOOL=arm-kindle_k5-linux-gnueabi-
 
-export CC=${TOOL}gcc
-export LD=${TOOL}ld
-export AR=${TOOL}ar
-export RANLIB=${TOOL}ranlib
+export CC=$XT-gcc
+export LD=$XT-ld
+export AR=$XT-ar
+export RANLIB=$XT-ranlib
 export ac_cv_func_getpgrp_void=yes
 export ac_cv_func_setpgrp_void=yes
 export CROSS_COMPILING=1
 
-./configure --host=arm-linux --prefix="$1" --disable-install-doc
+./configure --host=arm-linux "$@"
 
