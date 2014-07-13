@@ -1,5 +1,5 @@
 
-FROM dtinth/docker-kindle-k5-toolchain
+FROM dtinth/kindle-k5-toolchain
 
 # download and compile readline to link against ruby
 RUN cd /uchi && wget http://ftp.gnu.org/gnu/readline/readline-5.2.tar.gz && tar xvzf readline-5.2.tar.gz
