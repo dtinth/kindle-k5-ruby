@@ -1,5 +1,5 @@
 
-FROM dtinth/docker-kindle-k5-toolchain
+FROM dtinth/kindle-k5-toolchain
 
 # download and extract ruby
 RUN cd /uchi && wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz && tar xvzf ruby-2.1.2.tar.gz
