@@ -1,6 +1,11 @@
 
 FROM dtinth/docker-kindle-k5-toolchain
 
+# download and compile readline to link against ruby
+RUN cd /uchi && wget http://ftp.gnu.org/gnu/readline/readline-5.2.tar.gz && tar xvzf readline-5.2.tar.gz
+RUN cd /uchi/readline-5.2 && CC=arm-kindle_k5-linux-gnueabi-gcc LD=arm-kindle_k5-linux-gnueabi-ld AR=arm-kindle_k5-linux-gnueabi-ar RANLIB=arm-kindle_k5-linux-gnueabi-ranlib ./configure
+RUN cd /uchi/readline-5.2 && make && make install
+
 # download and extract ruby
 RUN cd /uchi && wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz && tar xvzf ruby-2.1.2.tar.gz
 RUN mkdir /uchi/dist
